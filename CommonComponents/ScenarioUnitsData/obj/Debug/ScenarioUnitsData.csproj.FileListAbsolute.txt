@@ -3,3 +3,8 @@ C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ScenarioUnits
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ScenarioUnitsData\obj\Debug\ScenarioUnitsData.csprojResolveAssemblyReference.cache
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ScenarioUnitsData\obj\Debug\Aptima.Asim.DDD.ScenarioUnitsData.dll
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ScenarioUnitsData\obj\Debug\Aptima.Asim.DDD.ScenarioUnitsData.pdb
+D:\DDD\CommonComponents\ScenarioUnitsData\bin\Debug\Aptima.Asim.DDD.ScenarioUnitsData.dll
+D:\DDD\CommonComponents\ScenarioUnitsData\bin\Debug\Aptima.Asim.DDD.ScenarioUnitsData.pdb
+D:\DDD\CommonComponents\ScenarioUnitsData\obj\Debug\ScenarioUnitsData.csprojResolveAssemblyReference.cache
+D:\DDD\CommonComponents\ScenarioUnitsData\obj\Debug\Aptima.Asim.DDD.ScenarioUnitsData.dll
+D:\DDD\CommonComponents\ScenarioUnitsData\obj\Debug\Aptima.Asim.DDD.ScenarioUnitsData.pdb

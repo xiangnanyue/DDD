@@ -1,0 +1,3 @@
+17:06:18 | Coordinator		| general - test is being recorded.
+17:06:18 | Coordinator		| general - attributes is being recorded.
+17:06:18 | Coordinator		| general - Hello

@@ -1,0 +1,721 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DDDAgentFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection">
+            <summary>
+            The main object for connecting to the DDD and sending/receiving events.
+            </summary>
+        </member>
+        <member name="T:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SessionStateType">
+            <summary>
+            The SessionStateType contains information about where the DDDServerConnection is in the login process.
+            </summary>
+        </member>
+        <member name="F:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SessionStateType.WAITING_FOR_PLAYERS">
+            <summary>
+            The DDDServerConnection is still waiting for available players.
+            </summary>
+        </member>
+        <member name="F:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SessionStateType.LOGGED_IN">
+            <summary>
+            The DDDServerConnection has received the available players and is ready have the ProcessEvents method called.
+            </summary>
+        </member>
+        <member name="T:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.ProcessSimulationEvent">
+            <summary>
+            This delegate defines a method which will handle an incoming simulation event
+            </summary>
+            <param name="ev"></param>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.Scenario">
+            <summary>
+            The name of the scenario that is currently running.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.DDDClientPath">
+            <summary>
+            Set this property the location of the DDDClient share directory on the server machine.
+            <example>If the DDD Server is running on a machine caller DDDSERVER, than set this property to \\DDDSERVER\DDDClient.</example>
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.State">
+            <summary>
+            The current place in the login process.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.TerminalID">
+            <summary>
+            The auto-generated id used to identify this computer when logging into the DDD Server.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.PlayerID">
+            <summary>
+            The decision maker that has been selected by either the 
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.Players">
+            <summary>
+            Get the list of decision makers in the DDD simulation.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.#ctor">
+            <summary>
+            The constructor for the DDDServerConnection object.
+            </summary>
+            
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SubscribeToEvent(System.String)">
+            <summary>
+            Subscribe to specific DDD events.  Must be called before ConnectToServer(hostname,port).
+            
+            </summary>
+            <param name="eventName"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.ConnectToServer(System.String,System.Int32)">
+            <summary>
+            Call this method to connect to the DDD Server.
+            </summary>
+            <param name="hostname"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.GetEvents">
+            <summary>
+            Get all the subscibed events that have arrived since the last time this method was called.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.Disconnect">
+            <summary>
+            Call this method to disconnect from the DDD Server.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.IsConnected">
+            <summary>
+            Check to see if you are currently connected to the DDD Server.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.ReadSimModel">
+            <summary>
+            Call this to read in the simulation configuration information that is located on the DDD Server machine.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.ReadSimModel(System.String)">
+            <summary>
+            A helper function used by ReadSimModel().
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.GetSimModel">
+            <summary>
+            Gets the instance of the sim model, for creating their own events.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.ProcessEvents">
+            <summary>
+            Call this on a periodic basis to receive events from the DDD Server and populate the SimObject objects contained in the DMView.
+            This will also tell and PlayerAgents and ObjectControlAgents to update themselves.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.RequestPlayers">
+            <summary>
+            Call this method to ask the DDD Server what players are available.  This initiates the login process.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SetLocalPlayer(System.String)">
+            <summary>
+            Call this method to set which player you want to be the primary decision maker of this DDDServerConnection.  You can find out what players are available from The AvailablePlayers property.
+            The method does not do a full DDD login and a DDDClient UI is still able to login as this player.
+            </summary>
+            <param name="dm"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.LoginPlayer(System.String,System.String)">
+            <summary>
+            This method completes a full DDD login.  Call this method if you want your application to replace the DDDClient for the specified decision maker.  
+            No DDDClient UI will be able to login for this player.
+            Call LoginFinished() until it returns true, indicating you have received the scenario initialization information, then call SendHandshakeInitializeGUIDone() to tell the DDD Server that you are done processing the initialization information.
+            </summary>
+            <param name="dm">The decision maker logging in.</param>
+            <param name="loginType">Either FULL or OBSERVER. A decision maker can have only one client with a FULL login at a time, but unlimited OBSERVER logins.</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.LoginPlayer(System.String)">
+            <summary>
+            This method completes a full DDD login.  Call this method if you want your application to replace the DDDClient for the specified decision maker.  
+            No DDDClient UI will be able to login for this player.
+            Call LoginFinished() until it returns true, indicating you have received the scenario initialization information, then call SendHandshakeInitializeGUIDone() to tell the DDD Server that you are done processing the initialization information.
+            Defaults to FULL login.
+            </summary>
+            <param name="dm">The decision maker logging in.</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.LoginFinished">
+            <summary>
+            This method will tell you if we have received the Scenario initialization information from the DDD Server.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendHandshakeInitializeGUIDone(System.String)">
+            <summary>
+            Tell the DDD Server that you are done processing the initialization information.  
+            This is only necessary if you are completing a full login using the LoginPlayer(dm) instead of the SetLocalPlayer(dm) mothod.
+            LoginType should be "FULL" or "OBSERVER".
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendMoveObjectRequest(System.String,Aptima.Asim.DDD.CommonComponents.DataTypeTools.LocationValue,System.Double)">
+            <summary>
+            Ask the DDD to move the specified object.  The decision maker that you are logged in as is provided automatically and will be used by the DDD Server to determine if you have authority to move this object.  If you want to move an object you don't own, use the version of this method that supplies a decision maker and supply the decision maker that owns the object.
+            </summary>
+            <param name="objectID">The object you want to move.</param>
+            <param name="destination">Where</param>
+            <param name="throttle"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendMoveObjectRequest(System.String,System.String,Aptima.Asim.DDD.CommonComponents.DataTypeTools.LocationValue,System.Double)">
+            <summary>
+            Ask the DDD to move the specified object.
+            </summary>
+            <param name="objectID"></param>
+            <param name="ownerID"></param>
+            <param name="destination"></param>
+            <param name="throttle"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendAttackObjectRequest(System.String,System.String,System.String)">
+            <summary>
+            Ask the DDD to initiate an engagement.
+            </summary>
+            <param name="objectID"></param>
+            <param name="targetObjectID"></param>
+            <param name="capabilityName"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendAttackObject(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Ask the DDD to initiate an engagement.
+            </summary>
+            <param name="objectID"></param>
+            <param name="targetObjectID"></param>
+            <param name="capabilityName"></param>
+            <param name="percentageApplied">0 - 100, the percent of the effect to apply to the target</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendWeaponLaunchRequest(System.String,System.String,System.String)">
+            <summary>
+            Ask the DDD to initiate a weapon launch.
+            </summary>
+            <param name="parentID"></param>
+            <param name="weaponID"></param>
+            <param name="targetObjectID"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendStateChange(System.String,System.String)">
+            <summary>
+            Tell the DDD to change the state of an object.
+            </summary>
+            <param name="obID"></param>
+            <param name="newState"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendTransferObjectRequest(System.String,System.String,System.String,System.String)">
+            <summary>
+            Ask the DDD to transfer ownership for the specified object.
+            </summary>
+            <param name="obID"></param>
+            <param name="userID"></param>
+            <param name="newOwner"></param>
+            <param name="currentState"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendPauseScenarioRequest">
+            <summary>
+            Tell the DDD to pause the scenario.  Will not work with DDD version before 4.1.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendResumeScenarioRequest">
+            <summary>
+            Tell the DDD to resume the scenario.  Will not work with DDD version before 4.1.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendLoadScenarioRequest(System.String,System.String,System.String)">
+            <summary>
+            Tell the DDD to load a scenario.  Will not work with DDD version before 4.1.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendStopScenarioRequest">
+            <summary>
+            Tell the DDD to stop the scenario.  Will not work with DDD version before 4.1.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendExternalAppMessage(System.String,Aptima.Asim.DDD.CommonComponents.DataTypeTools.AttributeCollectionValue)">
+            <summary>
+            Send an ExternalApp_Message event to communicate with another external application.
+            </summary>
+            <param name="appName"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendExternalAppLog(System.String,System.String)">
+            <summary>
+            Send an ExternalApp_Log event to allow an external application to place a message into the DDD log file.
+            </summary>
+            <param name="appName"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendSimEvent(Aptima.Asim.DDD.CommonComponents.SimulationEventTools.SimulationEvent)">
+            <summary>
+            Send an arbitrary simulation event.
+            </summary>
+            <param name="ev"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.GetDMView(System.String)">
+            <summary>
+            Get the DMView object that contains DDD object state information.
+            </summary>
+            <param name="dm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectLocation(System.String,System.Double,System.Double,System.Double,System.Boolean)">
+            <summary>
+            Sends an event to the server which updates a single object's location.  This should
+            immediately impact the simulation environment.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="x">x-location in meters</param>
+            <param name="y">y-location in meters</param>
+            <param name="z">altitude in meters</param>
+            <param name="exists">True is this coordinate exists, False if the coordinate does not.</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectThrottle(System.String,System.Double)">
+            <summary>
+            Sends an event to the server which updates a single object's throttle.  This should
+            immediately impact the simulation environment, and if the object is in motion it will update the movement.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="throttle">Between 0 and 1, this is the percentage of the object's Maximum Speed that it is currently moving at</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectDestinationLocation(System.String,System.Double,System.Double,System.Double,System.Boolean)">
+            <summary>
+            Sends an event to the server which updates a single object's destination location.  This should
+            immediately impact the simulation environment.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="x">x-location in meters</param>
+            <param name="y">y-location in meters</param>
+            <param name="z">altitude in meters</param>
+            <param name="exists">True is this coordinate exists, False if the coordinate does not.</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectFuelCapacity(System.String,System.Double)">
+            <summary>
+            Sends an event to the server which updates a single object's fuel capacity.  This should
+            immediately impact the simulation environment.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="fuelCapacity">The unit capacity for fuel for the specified object</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectFuelAmount(System.String,System.Double)">
+            <summary>
+            Sends an event to the server which updates a single object's fuel amount.  This should
+            immediately impact the simulation environment.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="fuelAmount">Number of units of fuel this object should have</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectFuelConsumptionRate(System.String,System.Double)">
+            <summary>
+            Sends an event to the server which updates a single object's fuel consumption rate.  This should
+            immediately impact the simulation environment and if the object is in motion, their current movement.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="fuelConsumptionRate">decimal value for rate of units/second consumed by motion</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectFuelDepletionState(System.String,System.String)">
+            <summary>
+            Sends an event to the server which updates a single object's fuel depletion state.  This should
+            immediately impact the simulation environment.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="fuelDepletionState">This is the state that this object transitions to when it runs out of fuel</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectCapabilities(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Double})">
+            <summary>
+            Sends an event to the server which updates a single object's Capability object.
+            This is a complicated data structure.  It contains a series of lists, whose values are related.
+            These lists contain a series of Capabilities, Ranges, Intensities, and Probabilities.  The index of each of these
+            collections should correlate such that Capabilities[1], Ranges[1], Intensities[1] and Probabilities[1] are all
+            for a single capability.  As these are TIGHTLY correlated, you cannot skip inserting any values into this collection.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="capabilities">The value list index relates to the other List collections passed in as parameters.</param>
+            <param name="ranges">The value list index relates to the other List collections passed in as parameters.</param>
+            <param name="intensities">The value list index relates to the other List collections passed in as parameters.</param>
+            <param name="probabilities">The value list index relates to the other List collections passed in as parameters.</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectVulnerabilities(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.String}},System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Double}},System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}},System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Double}})">
+            <summary>
+            Sends an event to the server which updates a single object's Vulnerability object.
+            This is a very complicated data structure.  It contains a list of states to transition to.
+            The index of these states should be used to index into the dictionaries for Capabilities, Ranges, Intensities, and Probabilities.
+            Within each state, there are a series of Capabilities, Ranges, Intensities, and Probabilities.  The index of each of these
+            collections should correlate such that Capabilities[1], Ranges[1], Intensities[1] and Probabilities[1] are all
+            for a single transition.  As these are TIGHTLY correlated, you cannot skip inserting any values into this collection.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="states">Simple list of state names to transition to</param>
+            <param name="capabilities">Dictionary whose index is related to the index of it's corresponding state.  The value list index relates to the other Dictionary/List collections passed in as parameters.</param>
+            <param name="ranges">Dictionary whose index is related to the index of it's corresponding state.  The value list index relates to the other Dictionary/List collections passed in as parameters.</param>
+            <param name="intensities">Dictionary whose index is related to the index of it's corresponding state.  The value list index relates to the other Dictionary/List collections passed in as parameters.</param>
+            <param name="probabilities">Dictionary whose index is related to the index of it's corresponding state.  The value list index relates to the other Dictionary/List collections passed in as parameters.</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectSize(System.String,System.Double)">
+            <summary>
+            Sends an event to the server which updates a single object's size.  This should
+            immediately impact the simulation environment.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="objectSize">The object's size in meters.</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectMaximumSpeed(System.String,System.Double)">
+            <summary>
+            Sends an event to the server which updates a single object's Maximum Speed.  If the object is
+            currently in motion, this should affect its current movement.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="maximumSpeed">Represents the object's new speed in meters/sec.</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectState(System.String,System.String)">
+            <summary>
+            Sends an event to the server which updates a single object's icon value.  This should
+            immediately impact a client's display.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="stateName"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectAttackDuration(System.String,System.Int32)">
+            <summary>
+            Sends an event to the server which updates a single object's attack duration.  This affects
+            the underlying model, and the next time that this object engages another, this
+            duration will be taken into affect.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="attackDuration">The value in seconds for how long an engagement originating
+            from this object will take</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectEngagementDuration(System.String,System.Int32)">
+            <summary>
+            Sends an event to the server which updates a single object's engagement duration.  This
+            affects the underlying model, and the next time that this object is engaged, this 
+            duration will be taken into affect.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="engagementDuration">The value in seconds for how long an engagement targetting
+            from this object will take</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.UpdateObjectIconName(System.String,System.String)">
+            <summary>
+            Sends an event to the server which updates a single object's icon value.  This should
+            immediately impact a client's display.
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="iconName">An image name in the appropriate Icon Library</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendObjectAttributeUpdateEvent(System.String,System.String,Aptima.Asim.DDD.CommonComponents.DataTypeTools.DataValue)">
+            <summary>
+            Sends a ForceUpdateObjectAttribute event to the Simulation.  These events update a specific object's attribute. 
+            This event contains an object ID, an attribute name, and an attribute value.  The attribute value can be any
+            data type in the system
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="updatedAttributeName">An object's Attribute name</param>
+            <param name="updatedAttributeValue">An object's updated Attribute value</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendUpdateAttackTimeWindowEvent(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Sends a UpdateAttackTimeWindowEvent event to the Simulation.  These events update an attack length for a specific  
+            attack occurring in the system.  Updating the window to 0 will stop the attack.  Setting the applyToAllAttackers
+            flag will apply this to all object attacking the target.
+            </summary>
+            <param name="attackingObjectID">The attacking object's ID</param>
+            <param name="targetObjectID">The target object's ID</param>
+            <param name="capabilityName">The capability being used on the target</param>
+            <param name="attackWindow">The REMAINING length in MILLISECONDS of the attack</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendCancelEngagementEvent(System.String,System.String,System.String)">
+            <summary>
+            Sends a CancelEngagement event to the simulation.  these events cancel a specific attack between an attacker and target.
+            To cancel all engagements on a target, you'll need to get the attacker list first, then iterate over that list and send separate
+            CancelEngagement events.
+            </summary>
+            <param name="attackingObjectID">The attacking object's ID</param>
+            <param name="targetObjectID">The target object's ID</param>
+            <param name="capabilityName">The capability being used on the target</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendRevealEvent(System.String,System.Collections.Generic.Dictionary{System.String,Aptima.Asim.DDD.CommonComponents.DataTypeTools.DataValue})">
+            <summary>
+            Sends a RevealObject event to the simulation.  
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="attributes">The objects attributes</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendDynamicCreateEvent(System.String,System.String,System.String)">
+            <summary>
+            Sends a DynamicCreate event to the simulation.  
+            </summary>
+            <param name="objectID">The new object's ID</param>
+            <param name="kind">The species of the new object</param>
+            <param name="owner">The owner of the new object</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.SendDynamicRevealEvent(System.String,System.Int32,System.String,System.Double,System.Double,System.Double)">
+            <summary>
+            Sends a DynamicReveal event to the simulation.  
+            </summary>
+            <param name="objectID">The object's ID</param>
+            <param name="kind">The species of the new object</param>
+            <param name="owner">The owner of the new object</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.AddEventCallback(System.String,Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.ProcessSimulationEvent)">
+            <summary>
+            Adds a callback which is called during ProcessEvents for a given event name
+            </summary>
+            <param name="eventName"></param>
+            <param name="eventHandler"></param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.DDDServerConnection.ClearEventCallbacks">
+            <summary>
+            clears out the callback list
+            </summary>
+        </member>
+        <member name="T:Aptima.Asim.DDD.DDDAgentFramework.SimObject">
+            <summary>
+            This class contains information about specific DDD objects.  It is created and maintained by the DDDServerConnection object and lives inside the DMView object.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.ShouldProject">
+            <summary>
+            Used by animation to project locations between time ticks.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.ChangedFlag">
+            <summary>
+            Find out if the object has had an attribute change since the last time the ResetChangedFlag() method was called.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.SimObject.ResetChangedFlag">
+            <summary>
+            Reset the ChangedFlag property.  This should be called after inspecting a SimObject and finding that it has changed.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.ControlAgent">
+            <summary>
+            Access the ObjectControlAgent for this DDD object.  This allows the addition of object behaviors.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.ID">
+            <summary>
+            The DDD identity string for the object.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.Owner">
+            <summary>
+            The DDD decision maker that owns the object.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.ClassName">
+            <summary>
+            The DDD species that the object belongs to.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.IconName">
+            <summary>
+            The icon name from the icon library that should be used to display the object.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.Location">
+            <summary>
+            The current location of the object.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.DestinationLocation">
+            <summary>
+            The current destination of the object.  If it isn't moving, it will be the same as Location.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.Velocity">
+            <summary>
+            The current velocity vector of the object.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.CurrentHeading">
+            <summary>
+            The maximum speed of the object.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.MaximumSpeed">
+            <summary>
+            The maximum speed of the object.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.Throttle">
+            <summary>
+            The current throttle of the object.  This should be the same as the throttle set by the MoveObjectRequest sent out (assuming it was successful and hasn't reached it destination yet).
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.IsWeapon">
+            <summary>
+            Is this object a weapon?
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.VulnerabilityList">
+            <summary>
+            What vulnerabilities does the object have?
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.CapabilityList">
+            <summary>
+            What capabilities does the this object have?
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.DockedObjects">
+            <summary>
+            What objects are currently docked to this object?
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.DockedWeapons">
+            <summary>
+            What weapons are currently docked to this object?
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.State">
+            <summary>
+            What is the current DDD state of this object?
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.CustomAttributes">
+            <summary>
+            The object's custom attributes as defined in the scenario.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.Vulnerabilities">
+            <summary>
+            The object's vulnerabilities.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.Capabilities">
+            <summary>
+            The object's capabilities.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.CapabilityRangeRings">
+            <summary>
+            The object's capability range rings.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.VulnerabilityRangeRings">
+            <summary>
+            The object's vulnerability range rings.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.FuelConsumptionRate">
+            <summary>
+            The object's fuel consumption rate in generic units per second.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.FuelAmount">
+            <summary>
+            The object's current amount of fuel in generic units.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.FuelCapacity">
+            <summary>
+            The object's maximum amount of fuel in generic units.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.Sensors">
+            <summary>
+            The object's sensors.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.TeamName">
+            <summary>
+            The object's owner's team name.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.ChildObjects">
+            <summary>
+            The object's list of child objects.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.DockedToParent">
+            <summary>
+            Is this object currently docked to its parent.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimObject.ParentObjectID">
+            <summary>
+            The id of the parent of this object.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.SimObject.#ctor(System.String)">
+            <summary>
+            The constructor for the SimObject.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:Aptima.Asim.DDD.DDDAgentFramework.SimActiveRegion">
+            <summary>
+            An object containing information about the active regions in the DDD simulation.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimActiveRegion.Color">
+            <summary>
+            The color that the active region should be displayed as.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimActiveRegion.ID">
+            <summary>
+            The ddd identity string for the region.
+            </summary>
+        </member>
+        <member name="P:Aptima.Asim.DDD.DDDAgentFramework.SimActiveRegion.Shape">
+            <summary>
+            The polygon shape of the region.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.SimActiveRegion.#ctor">
+            <summary>
+            A constructor.
+            </summary>
+        </member>
+        <member name="F:Aptima.Asim.DDD.DDDAgentFramework.UIHelpers.PlayerLoginDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.UIHelpers.PlayerLoginDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.UIHelpers.PlayerLoginDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Aptima.Asim.DDD.DDDAgentFramework.UIHelpers.ServerConnectDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.UIHelpers.ServerConnectDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Aptima.Asim.DDD.DDDAgentFramework.UIHelpers.ServerConnectDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

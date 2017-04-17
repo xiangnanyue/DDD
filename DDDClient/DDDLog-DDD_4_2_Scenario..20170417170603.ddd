@@ -1,0 +1,3 @@
+<Creator><Version>Dynamic Distributed Decision-Making Ver 4.2</Version><CompiledOn>Compiled on: 05.17.2012</CompiledOn></Creator>
+<GameSpeed><Parameter><Name>SpeedFactor</Name><Value><DoubleType>1</DoubleType></Value></Parameter><Parameter><Name>Time</Name><Value><IntegerType>0</IntegerType></Value></Parameter></GameSpeed>
+<ServerState><Parameter><Name>MessageType</Name><Value><StringType>SCENARIO_LOAD_FAILURE</StringType></Value></Parameter><Parameter><Name>MessageText</Name><Value><StringType>Error Loading Scenario.</StringType></Value></Parameter><Parameter><Name>Time</Name><Value><IntegerType>0</IntegerType></Value></Parameter></ServerState>

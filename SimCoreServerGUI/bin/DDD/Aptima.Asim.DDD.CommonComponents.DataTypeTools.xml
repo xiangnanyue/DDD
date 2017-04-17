@@ -128,6 +128,11 @@
             Used to represent values of attack info, aggregated on the server side.
             </summary>
         </member>
+        <member name="T:Aptima.Asim.DDD.CommonComponents.DataTypeTools.AttackCollectionValue.AttackValue">
+            <summary>
+            Represents a single attack between exactly two objects.
+            </summary>
+        </member>
         <member name="M:Aptima.Asim.DDD.CommonComponents.DataTypeTools.AttackCollectionValue.AddAttack(Aptima.Asim.DDD.CommonComponents.DataTypeTools.AttackCollectionValue.AttackValue,System.String@)">
             <summary>
             Adds an attack to this collection.  
@@ -137,11 +142,6 @@
             capacity of the original request.  If this function returned TRUE, then it was added partially.  If it was returned FALSE,
             then this attack was not added at all.</param>
             <returns></returns>
-        </member>
-        <member name="T:Aptima.Asim.DDD.CommonComponents.DataTypeTools.AttackCollectionValue.AttackValue">
-            <summary>
-            Represents a single attack between exactly two objects.
-            </summary>
         </member>
         <member name="T:Aptima.Asim.DDD.CommonComponents.DataTypeTools.ClassificationDisplayRulesValue">
             <summary>

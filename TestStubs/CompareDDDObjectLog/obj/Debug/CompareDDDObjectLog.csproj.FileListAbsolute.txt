@@ -3,3 +3,7 @@ C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\TestStubs\CompareDDDObjectLog\
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\TestStubs\CompareDDDObjectLog\obj\Debug\CompareDDDObjectLog.csprojResolveAssemblyReference.cache
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\TestStubs\CompareDDDObjectLog\obj\Debug\CompareDDDState.exe
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\TestStubs\CompareDDDObjectLog\obj\Debug\CompareDDDState.pdb
+D:\DDD\TestStubs\CompareDDDObjectLog\bin\Debug\CompareDDDState.exe
+D:\DDD\TestStubs\CompareDDDObjectLog\bin\Debug\CompareDDDState.pdb
+D:\DDD\TestStubs\CompareDDDObjectLog\obj\Debug\CompareDDDState.exe
+D:\DDD\TestStubs\CompareDDDObjectLog\obj\Debug\CompareDDDState.pdb

@@ -1037,3 +1037,103 @@ Error loading 'SeamateProcessor' Simulator. (Could not load file or assembly 'fi
 20150701124251:System.ApplicationException: Failure in ScenarioToQueues: Could not find file '\\zzuzack\DDDClient\DDDSchema_4_0.xsd'.
    at Aptima.Asim.DDD.ScenarioController.Coordinator.Coordinate(String scenarioFile, String schemaFile, SimulationEventDistributor& distributor, String simModelName, String contextControl, String updateIncr, String lowerLevel, List`1 logTypes, String debugFile) in c:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\ScenCon\Coordinator.cs:line 382
    at Aptima.Asim.DDD.ScenarioController.Coordinator.CoordinateNow() in c:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\ScenCon\Coordinator.cs:line 166
+
+20170417135746:System.Exception: Error reading simulation model file: "\\ZZUZACK\DDDClient\SimulationModel.xml" ---> System.IO.IOException: 找不到网络路径。
+
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 194
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 217
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.InitializeSimulationModel(String simModelFile) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 243
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.Start(String simModelFile, Int32 serverPort) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 88
+   在 Aptima.Asim.DDD.SimulationEngine.SimEngine.StartSimCore() 位置 D:\DDD\SimEngine\SimEngine.cs:行号 87
+   在 Aptima.Asim.DDD.SimCoreServer.SimCoreServer..ctor() 位置 D:\DDD\SimCoreServer\SimCoreServer.cs:行号 155
+   在 Aptima.Asim.DDD.SimCoreGUI.Form1..ctor() 位置 D:\DDD\SimCoreServerGUI\Form1.cs:行号 145
+   在 Aptima.Asim.DDD.SimCoreGUI.Program.Main() 位置 D:\DDD\SimCoreServerGUI\Program.cs:行号 21
+
+20170417153624:System.Exception: Error reading simulation model file: "\\ZZUZACK\DDDClient\SimulationModel.xml" ---> System.IO.IOException: 找不到网络路径。
+
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 194
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 217
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.InitializeSimulationModel(String simModelFile) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 243
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.Start(String simModelFile, Int32 serverPort) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 88
+   在 Aptima.Asim.DDD.SimulationEngine.SimEngine.StartSimCore() 位置 D:\DDD\SimEngine\SimEngine.cs:行号 87
+   在 Aptima.Asim.DDD.SimCoreServer.SimCoreServer..ctor() 位置 D:\DDD\SimCoreServer\SimCoreServer.cs:行号 155
+   在 Aptima.Asim.DDD.SimCoreGUI.Form1..ctor() 位置 D:\DDD\SimCoreServerGUI\Form1.cs:行号 145
+   在 Aptima.Asim.DDD.SimCoreGUI.Program.Main() 位置 D:\DDD\SimCoreServerGUI\Program.cs:行号 21
+
+20170417153721:System.Exception: Error reading simulation model file: "\\ZZUZACK\DDDClient\SimulationModel.xml" ---> System.IO.IOException: 找不到网络路径。
+
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 194
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 217
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.InitializeSimulationModel(String simModelFile) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 243
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.Start(String simModelFile, Int32 serverPort) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 88
+   在 Aptima.Asim.DDD.SimulationEngine.SimEngine.StartSimCore() 位置 D:\DDD\SimEngine\SimEngine.cs:行号 87
+   在 Aptima.Asim.DDD.SimCoreServer.SimCoreServer..ctor() 位置 D:\DDD\SimCoreServer\SimCoreServer.cs:行号 155
+   在 Aptima.Asim.DDD.SimCoreGUI.Form1..ctor() 位置 D:\DDD\SimCoreServerGUI\Form1.cs:行号 145
+   在 Aptima.Asim.DDD.SimCoreGUI.Program.Main() 位置 D:\DDD\SimCoreServerGUI\Program.cs:行号 21
+
+20170417160345:System.Exception: Error reading simulation model file: "\\ZZUZACK\DDDClient\SimulationModel.xml" ---> System.IO.IOException: 找不到网络路径。
+
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 194
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 217
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.InitializeSimulationModel(String simModelFile) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 243
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.Start(String simModelFile, Int32 serverPort) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 88
+   在 Aptima.Asim.DDD.SimulationEngine.SimEngine.StartSimCore() 位置 D:\DDD\SimEngine\SimEngine.cs:行号 87
+   在 Aptima.Asim.DDD.SimCoreServer.SimCoreServer..ctor() 位置 D:\DDD\SimCoreServer\SimCoreServer.cs:行号 155
+   在 Aptima.Asim.DDD.SimCoreGUI.Form1..ctor() 位置 D:\DDD\SimCoreServerGUI\Form1.cs:行号 145
+   在 Aptima.Asim.DDD.SimCoreGUI.Program.Main() 位置 D:\DDD\SimCoreServerGUI\Program.cs:行号 21
+
+20170417165024:System.Exception: Error reading simulation model file: "\\ZZUZACK\DDDClient\SimulationModel.xml" ---> System.IO.IOException: 找不到网络路径。
+
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 194
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 217
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.InitializeSimulationModel(String simModelFile) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 243
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.Start(String simModelFile, Int32 serverPort) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 88
+   在 Aptima.Asim.DDD.SimulationEngine.SimEngine.StartSimCore() 位置 D:\DDD\SimEngine\SimEngine.cs:行号 87
+   在 Aptima.Asim.DDD.SimCoreServer.SimCoreServer..ctor() 位置 D:\DDD\SimCoreServer\SimCoreServer.cs:行号 155
+   在 Aptima.Asim.DDD.SimCoreGUI.Form1..ctor() 位置 D:\DDD\SimCoreServerGUI\Form1.cs:行号 145
+   在 Aptima.Asim.DDD.SimCoreGUI.Program.Main() 位置 D:\DDD\SimCoreServerGUI\Program.cs:行号 21
+
+20170417165100:System.Exception: Error reading simulation model file: "\\ZZUZACK\DDDClient\SimulationModel.xml" ---> System.IO.IOException: 找不到网络路径。
+
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 194
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Aptima.Asim.DDD.CommonComponents.SimulationModelTools.SimulationModelReader.readModel(String fileName) 位置 D:\DDD\CommonComponents\SimulationModelTools\SimulationModelReader.cs:行号 217
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.InitializeSimulationModel(String simModelFile) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 243
+   在 Aptima.Asim.DDD.CommonComponents.SimCoreTools.SimCore.Start(String simModelFile, Int32 serverPort) 位置 D:\DDD\CommonComponents\SimCoreTools\SimCore.cs:行号 88
+   在 Aptima.Asim.DDD.SimulationEngine.SimEngine.StartSimCore() 位置 D:\DDD\SimEngine\SimEngine.cs:行号 87
+   在 Aptima.Asim.DDD.SimCoreServer.SimCoreServer..ctor() 位置 D:\DDD\SimCoreServer\SimCoreServer.cs:行号 155
+   在 Aptima.Asim.DDD.SimCoreGUI.Form1..ctor() 位置 D:\DDD\SimCoreServerGUI\Form1.cs:行号 145
+   在 Aptima.Asim.DDD.SimCoreGUI.Program.Main() 位置 D:\DDD\SimCoreServerGUI\Program.cs:行号 21
+
+20170417170636:System.ApplicationException: Failure in ScenarioToQueues: Error reading scenario file C:\Users\Public\DDDClient\DDD_4_2_Scenario.xml
+   在 Aptima.Asim.DDD.ScenarioController.Coordinator.Coordinate(String scenarioFile, String schemaFile, SimulationEventDistributor& distributor, String simModelName, String contextControl, String updateIncr, String lowerLevel, List`1 logTypes, String debugFile) 位置 D:\DDD\ScenCon\Coordinator.cs:行号 382
+   在 Aptima.Asim.DDD.ScenarioController.Coordinator.CoordinateNow() 位置 D:\DDD\ScenCon\Coordinator.cs:行号 166

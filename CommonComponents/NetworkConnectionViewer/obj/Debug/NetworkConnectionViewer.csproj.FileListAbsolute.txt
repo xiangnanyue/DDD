@@ -2,3 +2,7 @@ C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\NetworkConnec
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\NetworkConnectionViewer\bin\Debug\NetworkConnectionViewer.pdb
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\NetworkConnectionViewer\obj\Debug\NetworkConnectionViewer.dll
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\NetworkConnectionViewer\obj\Debug\NetworkConnectionViewer.pdb
+D:\DDD\CommonComponents\NetworkConnectionViewer\bin\Debug\NetworkConnectionViewer.dll
+D:\DDD\CommonComponents\NetworkConnectionViewer\bin\Debug\NetworkConnectionViewer.pdb
+D:\DDD\CommonComponents\NetworkConnectionViewer\obj\Debug\NetworkConnectionViewer.dll
+D:\DDD\CommonComponents\NetworkConnectionViewer\obj\Debug\NetworkConnectionViewer.pdb

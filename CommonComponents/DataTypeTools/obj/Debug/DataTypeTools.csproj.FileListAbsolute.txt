@@ -4,3 +4,9 @@ C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\DataTypeTools
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\DataTypeTools\obj\Debug\DataTypeTools.csprojResolveAssemblyReference.cache
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\DataTypeTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.DataTypeTools.dll
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\DataTypeTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.DataTypeTools.pdb
+D:\DDD\CommonComponents\DataTypeTools\bin\Debug\Aptima.Asim.DDD.CommonComponents.DataTypeTools.dll
+D:\DDD\CommonComponents\DataTypeTools\bin\Debug\Aptima.Asim.DDD.CommonComponents.DataTypeTools.pdb
+D:\DDD\CommonComponents\DataTypeTools\bin\Debug\Aptima.Asim.DDD.CommonComponents.DataTypeTools.xml
+D:\DDD\CommonComponents\DataTypeTools\obj\Debug\DataTypeTools.csprojResolveAssemblyReference.cache
+D:\DDD\CommonComponents\DataTypeTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.DataTypeTools.dll
+D:\DDD\CommonComponents\DataTypeTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.DataTypeTools.pdb

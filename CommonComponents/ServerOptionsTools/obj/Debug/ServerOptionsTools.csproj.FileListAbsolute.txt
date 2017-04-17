@@ -3,3 +3,8 @@ C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ServerOptions
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ServerOptionsTools\obj\Debug\ServerOptionsTools.csprojResolveAssemblyReference.cache
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ServerOptionsTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.ServerOptionsTools.dll
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ServerOptionsTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.ServerOptionsTools.pdb
+D:\DDD\CommonComponents\ServerOptionsTools\bin\Debug\Aptima.Asim.DDD.CommonComponents.ServerOptionsTools.dll
+D:\DDD\CommonComponents\ServerOptionsTools\bin\Debug\Aptima.Asim.DDD.CommonComponents.ServerOptionsTools.pdb
+D:\DDD\CommonComponents\ServerOptionsTools\obj\Debug\ServerOptionsTools.csprojResolveAssemblyReference.cache
+D:\DDD\CommonComponents\ServerOptionsTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.ServerOptionsTools.dll
+D:\DDD\CommonComponents\ServerOptionsTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.ServerOptionsTools.pdb

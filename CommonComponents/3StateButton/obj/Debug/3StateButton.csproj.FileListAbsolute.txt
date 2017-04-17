@@ -6,3 +6,10 @@ C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\3StateButton\
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\3StateButton\obj\Debug\Aptima.Asim.DDD.CommonComponents.ThreeStateButton.dll
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\3StateButton\obj\Debug\Aptima.Asim.DDD.CommonComponents.ThreeStateButton.pdb
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\3StateButton\obj\Debug\3StateButton.csprojResolveAssemblyReference.cache
+D:\DDD\CommonComponents\3StateButton\bin\Debug\Aptima.Asim.DDD.CommonComponents.ThreeStateButton.dll
+D:\DDD\CommonComponents\3StateButton\bin\Debug\Aptima.Asim.DDD.CommonComponents.ThreeStateButton.pdb
+D:\DDD\CommonComponents\3StateButton\obj\Debug\Aptima.Asim.DDD.CommonComponents.ThreeStateButton.Properties.Resources.resources
+D:\DDD\CommonComponents\3StateButton\obj\Debug\Aptima.Asim.DDD.CommonComponents.ThreeStateButton.ThreeStateButton.resources
+D:\DDD\CommonComponents\3StateButton\obj\Debug\3StateButton.csproj.GenerateResource.Cache
+D:\DDD\CommonComponents\3StateButton\obj\Debug\Aptima.Asim.DDD.CommonComponents.ThreeStateButton.dll
+D:\DDD\CommonComponents\3StateButton\obj\Debug\Aptima.Asim.DDD.CommonComponents.ThreeStateButton.pdb

@@ -1,0 +1,5590 @@
+<html><head><title>DDD Event Documentation</title></head><body><p><h2>DDD Event Documentation</h2></p>
+<a name="TOC"><h2>Table of Contents</h2></a>
+<ul>
+<li><a href="#ActiveRegionSpeedMultiplierUpdate">ActiveRegionSpeedMultiplierUpdate</a></li>
+<li><a href="#ActiveRegionUpdate">ActiveRegionUpdate</a></li>
+<li><a href="#AddToChatRoom">AddToChatRoom</a></li>
+<li><a href="#AddToVoiceChannel">AddToVoiceChannel</a></li>
+<li><a href="#AttackObject">AttackObject</a></li>
+<li><a href="#AttackObjectRequest">AttackObjectRequest</a></li>
+<li><a href="#AttackSucceeded">AttackSucceeded</a></li>
+<li><a href="#AuthenticationRequest">AuthenticationRequest</a></li>
+<li><a href="#AuthenticationResponse">AuthenticationResponse</a></li>
+<li><a href="#BaseEvent">BaseEvent</a></li>
+<li><a href="#BeginTextChatRequest">BeginTextChatRequest</a></li>
+<li><a href="#BeginWhiteboardLineRequest">BeginWhiteboardLineRequest</a></li>
+<li><a href="#CancelEngagement">CancelEngagement</a></li>
+<li><a href="#ChangeTagRequest">ChangeTagRequest</a></li>
+<li><a href="#ClientAttackRequest">ClientAttackRequest</a></li>
+<li><a href="#ClientMeasure_CapabilitySelected">ClientMeasure_CapabilitySelected</a></li>
+<li><a href="#ClientMeasure_ObjectSelected">ClientMeasure_ObjectSelected</a></li>
+<li><a href="#ClientMeasure_ObjectTabSelected">ClientMeasure_ObjectTabSelected</a></li>
+<li><a href="#ClientMeasure_ScreenView">ClientMeasure_ScreenView</a></li>
+<li><a href="#ClientRemoveObject">ClientRemoveObject</a></li>
+<li><a href="#ClientSideAssetTransferAllowed">ClientSideAssetTransferAllowed</a></li>
+<li><a href="#ClientSideRangeRingDisplayLevel">ClientSideRangeRingDisplayLevel</a></li>
+<li><a href="#CloseChatRoom">CloseChatRoom</a></li>
+<li><a href="#CloseVoiceChannel">CloseVoiceChannel</a></li>
+<li><a href="#CreateChatRoom">CreateChatRoom</a></li>
+<li><a href="#CreateVoiceChannel">CreateVoiceChannel</a></li>
+<li><a href="#CreateWhiteboardRoom">CreateWhiteboardRoom</a></li>
+<li><a href="#DisconnectDecisionMaker">DisconnectDecisionMaker</a></li>
+<li><a href="#DisconnectTerminal">DisconnectTerminal</a></li>
+<li><a href="#DynamicCreate">DynamicCreate</a></li>
+<li><a href="#DynamicReveal">DynamicReveal</a></li>
+<li><a href="#EngramValue">EngramValue</a></li>
+<li><a href="#ExternalApp_Log">ExternalApp_Log</a></li>
+<li><a href="#ExternalApp_Message">ExternalApp_Message</a></li>
+<li><a href="#ExternalApp_SimStart">ExternalApp_SimStart</a></li>
+<li><a href="#ExternalApp_SimStop">ExternalApp_SimStop</a></li>
+<li><a href="#ExternalEmailReceived">ExternalEmailReceived</a></li>
+<li><a href="#FailedToCreateChatRoom">FailedToCreateChatRoom</a></li>
+<li><a href="#ForceUpdateObjectAttribute">ForceUpdateObjectAttribute</a></li>
+<li><a href="#ForkReplayFinished">ForkReplayFinished</a></li>
+<li><a href="#ForkReplayStarted">ForkReplayStarted</a></li>
+<li><a href="#GameSpeed">GameSpeed</a></li>
+<li><a href="#GameSpeedRequest">GameSpeedRequest</a></li>
+<li><a href="#HandshakeAvailablePlayers">HandshakeAvailablePlayers</a></li>
+<li><a href="#HandshakeGUIRegister">HandshakeGUIRegister</a></li>
+<li><a href="#HandshakeGUIRoleRequest">HandshakeGUIRoleRequest</a></li>
+<li><a href="#HandshakeInitializeGUI">HandshakeInitializeGUI</a></li>
+<li><a href="#HandshakeInitializeGUIDone">HandshakeInitializeGUIDone</a></li>
+<li><a href="#History_AttackedObjectReport">History_AttackedObjectReport</a></li>
+<li><a href="#History_AttackerObjectReport">History_AttackerObjectReport</a></li>
+<li><a href="#History_Pursue">History_Pursue</a></li>
+<li><a href="#History_SubplatformLaunch">History_SubplatformLaunch</a></li>
+<li><a href="#InitializeClassifications">InitializeClassifications</a></li>
+<li><a href="#JoinChatRoom">JoinChatRoom</a></li>
+<li><a href="#JoinVoiceChannel">JoinVoiceChannel</a></li>
+<li><a href="#LeaveVoiceChannel">LeaveVoiceChannel</a></li>
+<li><a href="#LoadScenarioRequest">LoadScenarioRequest</a></li>
+<li><a href="#MoveDone">MoveDone</a></li>
+<li><a href="#MoveObject">MoveObject</a></li>
+<li><a href="#MoveObjectRequest">MoveObjectRequest</a></li>
+<li><a href="#MuteUser">MuteUser</a></li>
+<li><a href="#NewObject">NewObject</a></li>
+<li><a href="#ObjectClassificationRequest">ObjectClassificationRequest</a></li>
+<li><a href="#ObjectCollision">ObjectCollision</a></li>
+<li><a href="#PauseScenario">PauseScenario</a></li>
+<li><a href="#PauseScenarioRequest">PauseScenarioRequest</a></li>
+<li><a href="#PlayerControl">PlayerControl</a></li>
+<li><a href="#Playfield">Playfield</a></li>
+<li><a href="#PlayVoiceMessage">PlayVoiceMessage</a></li>
+<li><a href="#PlayVoiceMessageToUser">PlayVoiceMessageToUser</a></li>
+<li><a href="#RandomSeed">RandomSeed</a></li>
+<li><a href="#RemoveFromVoiceChannel">RemoveFromVoiceChannel</a></li>
+<li><a href="#RequestChatRoomCreate">RequestChatRoomCreate</a></li>
+<li><a href="#RequestCloseChatRoom">RequestCloseChatRoom</a></li>
+<li><a href="#RequestJoinVoiceChannel">RequestJoinVoiceChannel</a></li>
+<li><a href="#RequestLeaveVoiceChannel">RequestLeaveVoiceChannel</a></li>
+<li><a href="#RequestMuteUser">RequestMuteUser</a></li>
+<li><a href="#RequestStartedTalking">RequestStartedTalking</a></li>
+<li><a href="#RequestStoppedTalking">RequestStoppedTalking</a></li>
+<li><a href="#RequestUnmuteUser">RequestUnmuteUser</a></li>
+<li><a href="#RequestWhiteboardRoomCreate">RequestWhiteboardRoomCreate</a></li>
+<li><a href="#ResetSimulation">ResetSimulation</a></li>
+<li><a href="#ResumeScenario">ResumeScenario</a></li>
+<li><a href="#ResumeScenarioRequest">ResumeScenarioRequest</a></li>
+<li><a href="#RevealObject">RevealObject</a></li>
+<li><a href="#ScoreUpdate">ScoreUpdate</a></li>
+<li><a href="#SEAMATE_TrackAdded">SEAMATE_TrackAdded</a></li>
+<li><a href="#SelfDefenseAttackStarted">SelfDefenseAttackStarted</a></li>
+<li><a href="#SendTrackRemovedEvent">SendTrackRemovedEvent</a></li>
+<li><a href="#ServerState">ServerState</a></li>
+<li><a href="#SimCoreReady">SimCoreReady</a></li>
+<li><a href="#SimulationTimeEvent">SimulationTimeEvent</a></li>
+<li><a href="#StartedTalking">StartedTalking</a></li>
+<li><a href="#StartupComplete">StartupComplete</a></li>
+<li><a href="#StateChange">StateChange</a></li>
+<li><a href="#StoppedTalking">StoppedTalking</a></li>
+<li><a href="#StopReplay">StopReplay</a></li>
+<li><a href="#StopScenario">StopScenario</a></li>
+<li><a href="#StopScenarioRequest">StopScenarioRequest</a></li>
+<li><a href="#SubplatformDock">SubplatformDock</a></li>
+<li><a href="#SubplatformDockRequest">SubplatformDockRequest</a></li>
+<li><a href="#SubplatformLaunch">SubplatformLaunch</a></li>
+<li><a href="#SubplatformLaunchRequest">SubplatformLaunchRequest</a></li>
+<li><a href="#SystemMessage">SystemMessage</a></li>
+<li><a href="#TextChat">TextChat</a></li>
+<li><a href="#TextChatRequest">TextChatRequest</a></li>
+<li><a href="#TimeTick">TimeTick</a></li>
+<li><a href="#TransferObject">TransferObject</a></li>
+<li><a href="#TransferObjectRequest">TransferObjectRequest</a></li>
+<li><a href="#UnmuteUser">UnmuteUser</a></li>
+<li><a href="#UpdateAttackTimeWindow">UpdateAttackTimeWindow</a></li>
+<li><a href="#UpdateTag">UpdateTag</a></li>
+<li><a href="#ViewProActiveRegionUpdate">ViewProActiveRegionUpdate</a></li>
+<li><a href="#ViewProAttackUpdate">ViewProAttackUpdate</a></li>
+<li><a href="#ViewProAttributeUpdate">ViewProAttributeUpdate</a></li>
+<li><a href="#ViewProInitializeObject">ViewProInitializeObject</a></li>
+<li><a href="#ViewProMotionUpdate">ViewProMotionUpdate</a></li>
+<li><a href="#ViewProStopObjectUpdate">ViewProStopObjectUpdate</a></li>
+<li><a href="#WeaponLaunch">WeaponLaunch</a></li>
+<li><a href="#WeaponLaunchFailure">WeaponLaunchFailure</a></li>
+<li><a href="#WeaponLaunchRequest">WeaponLaunchRequest</a></li>
+<li><a href="#WhiteboardClear">WhiteboardClear</a></li>
+<li><a href="#WhiteboardClearAll">WhiteboardClearAll</a></li>
+<li><a href="#WhiteboardClearAllRequest">WhiteboardClearAllRequest</a></li>
+<li><a href="#WhiteboardClearRequest">WhiteboardClearRequest</a></li>
+<li><a href="#WhiteboardLine">WhiteboardLine</a></li>
+<li><a href="#WhiteboardLineRequest">WhiteboardLineRequest</a></li>
+<li><a href="#WhiteboardSyncScreenView">WhiteboardSyncScreenView</a></li>
+<li><a href="#WhiteboardSyncScreenViewRequest">WhiteboardSyncScreenViewRequest</a></li>
+<li><a href="#WhiteboardUndo">WhiteboardUndo</a></li>
+<li><a href="#WhiteboardUndoRequest">WhiteboardUndoRequest</a></li>
+</ul>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ActiveRegionSpeedMultiplierUpdate"><b>ActiveRegionSpeedMultiplierUpdate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					A SimCore internal event.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The ObjectID of the object being updated.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ActiveRegionUpdate"><b>ActiveRegionUpdate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ScenCon to update whether an ActiveRegion is active or visible.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The id of the region.
+				</td></tr>
+<tr><td>IsVisible</td><td>BooleanType</td><td>
+					Is the region visible to players.
+				</td></tr>
+<tr><td>IsActive</td><td>BooleanType</td><td>
+					Does the region modify object behavior.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="AddToChatRoom"><b>AddToChatRoom</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the  controller to the chat server request that a decision maker
+					be added to a chat room.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>RoomName</td><td>StringType</td><td>
+					The name of the chat room.
+				</td></tr>
+<tr><td>TargetPlayerID</td><td>StringType</td><td>
+					The decision maker that that is trying to join the chat room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="AddToVoiceChannel"><b>AddToVoiceChannel</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the  controller to the voice server request that a decision maker
+					be added to a channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>NewAccessor</td><td>StringType</td><td>
+					The decision maker that that is trying to join the chat room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="AttackObject"><b>AttackObject</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the ScenCon to announce that an object has started attacking another object.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the attacking object.
+				</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>
+					The unique id of the object being attacked.
+				</td></tr>
+<tr><td>CapabilityName</td><td>StringType</td><td>
+					The name of the capability used in the attack.
+				</td></tr>
+<tr><td>PercentageApplied</td><td>IntegerType</td><td>
+					The Percentage of the capability used in the attack.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="AttackObjectRequest"><b>AttackObjectRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI or agent to the ScenCon to request that an object attack another object.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker requesting the action.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the attacking object.
+				</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>
+					The unique id of the object being attacked.
+				</td></tr>
+<tr><td>CapabilityName</td><td>StringType</td><td>
+					The name of the capability used in the attack.
+				</td></tr>
+<tr><td>PercentageApplied</td><td>IntegerType</td><td>
+					The percentage of the capability used in the attack.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="AttackSucceeded"><b>AttackSucceeded</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the AttackSim after an attack is completed.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the attacking object.
+				</td></tr>
+<tr><td>TargetID</td><td>StringType</td><td>
+					The unique id of the object being attacked.
+				</td></tr>
+<tr><td>NewState</td><td>StringType</td><td>
+					The new state of the attacked object.
+				</td></tr>
+<tr><td>Capabilities</td><td>StringListType</td><td>
+					The name of the capability used in the attack.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="AuthenticationRequest"><b>AuthenticationRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Part of the client GUI initialization handshake.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Username</td><td>StringType</td><td>
+					The username the player is logging in with.
+				</td></tr>
+<tr><td>Password</td><td>StringType</td><td>
+					The hashed password.
+				</td></tr>
+<tr><td>TerminalID</td><td>StringType</td><td>
+					The id of the machine that is logging in.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="AuthenticationResponse"><b>AuthenticationResponse</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Part of the client GUI initialization handshake.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Success</td><td>BooleanType</td><td>
+					True if authentication accepted.
+				</td></tr>
+<tr><td>Message</td><td>StringType</td><td>
+					Message displayed to user
+				</td></tr>
+<tr><td>TerminalID</td><td>StringType</td><td>
+					The intended terminal ID.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="BaseEvent"><b>BaseEvent</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+				This is the event that all other events are derrived from.  This event will never be sent directly.
+			</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="BeginTextChatRequest"><b>BeginTextChatRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI to TextChatServer when user first starts typing.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the chat message.
+				</td></tr>
+<tr><td>RoomName</td><td>StringType</td><td>
+					The name of the ChatRoom;          
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="BeginWhiteboardLineRequest"><b>BeginWhiteboardLineRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI when the user begins drawing a line.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the whiteboard message.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="CancelEngagement"><b>CancelEngagement</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td></td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>AttackingObjectID</td><td>StringType</td><td>ID of the attacking object</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>ID of the target object being engaged</td></tr>
+<tr><td>CapabilityName</td><td>StringType</td><td>Capability being applied to the target</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ChangeTagRequest"><b>ChangeTagRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent from client to ScenCon to request a change on a unit's tag			
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UnitID</td><td>StringType</td><td>
+					The unit whose tag is to be changed
+				</td></tr>
+<tr><td>DecisionMakerID</td><td>StringType</td><td>
+					The decision maker requesting the tag change
+				</td></tr>
+<tr><td>Tag</td><td>StringType</td><td>
+					The text for the teg
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ClientAttackRequest"><b>ClientAttackRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a GUI client or agent request that an object attack another object.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>PlayerID</td><td>StringType</td><td>
+					The decision maker that is making the attack request.
+				</td></tr>
+<tr><td>AttackingObjectID</td><td>StringType</td><td>
+					The unique id of the attacking object.
+				</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>
+					The unique id of the object that is being attacked.
+				</td></tr>
+<tr><td>WeaponOrCapabilityName</td><td>StringType</td><td>
+					The name of the weopon or capability that is to be used in the attack.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ClientMeasure_CapabilitySelected"><b>ClientMeasure_CapabilitySelected</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>This event is sent out from each connected DDD Client each time a weapon or capability is selected.</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The DM ID of the user who is selecting the capability or weapon.
+				</td></tr>
+<tr><td>ParentObjectID</td><td>StringType</td><td>
+					The object ID of the object that owns the capability or weapon (this is also the currently selected object).
+				</td></tr>
+<tr><td>WeaponOrCapabilityName</td><td>StringType</td><td>
+					The name of the capability or weapon being selected.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ClientMeasure_ObjectSelected"><b>ClientMeasure_ObjectSelected</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>This event is sent out from each connected DDD Client each time that user selects (or de-selects) an object</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The object ID of the user's newly selected object.  If this is an empty string, then they have no object selected.
+				</td></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The DM ID of the user who is selecting an object.
+				</td></tr>
+<tr><td>OwnerID</td><td>StringType</td><td>
+					The DM ID of the user who owns the selected object.  
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ClientMeasure_ObjectTabSelected"><b>ClientMeasure_ObjectTabSelected</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>This event is sent out from each connected DDD Client each time a tab is selected in the user controls section.</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The currently selected object's ID.
+				</td></tr>
+<tr><td>TabName</td><td>StringType</td><td>
+					The name of the tab that is currently selected.
+				</td></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					This parameter is the DM ID of the player whose screen this information is describing.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ClientMeasure_ScreenView"><b>ClientMeasure_ScreenView</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>This event is sent out from each connected DDD Client each time tick where the screen position, size, or zoom level has changed from the last tick.</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Origin-X</td><td>IntegerType</td><td>
+					This parameter is the X value of the origin point of the user's current view.  This value is in meters from origin (top left corner of screen).
+				</td></tr>
+<tr><td>Origin-Y</td><td>IntegerType</td><td>
+					This parameter is the Y value of the origin point of the user's current view.  This value is in meters from origin (top left corner of screen).
+				</td></tr>
+<tr><td>ScreenSizeWidth</td><td>IntegerType</td><td>
+					This parameter is the Width value of the user's current view.  This value is in meters.
+				</td></tr>
+<tr><td>ScreenSizeHeight</td><td>IntegerType</td><td>
+					This parameter is the Height value of the user's current view.  This value is in meters.
+				</td></tr>
+<tr><td>ScreenZoom</td><td>DoubleType</td><td>
+					This parameter is the zoom level of the user's current view.  A value of 1 is 100%, of .25 is 25%, of 2 is 200%.
+				</td></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					This parameter is the DM ID of the player whose screen this information is describing.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ClientRemoveObject"><b>ClientRemoveObject</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the ViewPro to a client GUI to announce that an object should be removed from
+					the playfield and forgotten about.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>TargetPlayer</td><td>StringType</td><td>
+					A decision maker id.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The id of the object.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ClientSideAssetTransferAllowed"><b>ClientSideAssetTransferAllowed</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ScenCon to tell client if clients can transfer their assets
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>EnableAssetTransfer</td><td>BooleanType</td><td>
+					True if assets can be transferred
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ClientSideRangeRingDisplayLevel"><b>ClientSideRangeRingDisplayLevel</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ScenCon to inform the SimCore about how to formulate range ring info.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Value</td><td>StringType</td><td>Enum between Disabled, Private, SharedSensorNetwork, Full</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="CloseChatRoom"><b>CloseChatRoom</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the Controller to the TextChatServer to request that a chat room be closed.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>RoomName</td><td>StringType</td><td>
+					The name of the chat room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="CloseVoiceChannel"><b>CloseVoiceChannel</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the Controller to the Voice Server to request that a channel be closed.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="CreateChatRoom"><b>CreateChatRoom</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by Controller to Text Chat Server 
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>RoomName</td><td>StringType</td><td>
+					The name of the chat room.
+				</td></tr>
+<tr><td>MembershipList</td><td>StringListType</td><td>
+					The decision makers that are members of the room.
+				</td></tr>
+<tr><td>SenderDM_ID</td><td>StringType</td><td>
+					The id of the decision maker that created the chat room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="CreateVoiceChannel"><b>CreateVoiceChannel</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by Controller to Voice Server 
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>MembershipList</td><td>StringListType</td><td>
+					The decision makers that are members of the room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="CreateWhiteboardRoom"><b>CreateWhiteboardRoom</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by Whiteboard Server to the clients
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>RoomName</td><td>StringType</td><td>
+					The name of the whiteboard room.
+				</td></tr>
+<tr><td>MembershipList</td><td>StringListType</td><td>
+					The decision makers that are members of the room.
+				</td></tr>
+<tr><td>SenderDM_ID</td><td>StringType</td><td>
+					The id of the decision maker that created the whiteboard room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="DisconnectDecisionMaker"><b>DisconnectDecisionMaker</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by client GUI to Server to announce that it is disconnecting.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>DecisionMakerID</td><td>StringType</td><td>
+					The ID of the DM who is disconnecting from the system.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="DisconnectTerminal"><b>DisconnectTerminal</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					An internal server event to announce that a client GUI has lost a connection.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>TerminalID</td><td>StringType</td><td>
+					The TerminalID of the DM to be removed.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="DynamicCreate"><b>DynamicCreate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td></td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>ID of the newly created object</td></tr>
+<tr><td>Kind</td><td>StringType</td><td>The species of the object</td></tr>
+<tr><td>Owner</td><td>StringType</td><td>The initial owner of the object</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="DynamicReveal"><b>DynamicReveal</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td></td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>ID of the newly created object</td></tr>
+<tr><td>RevealTime</td><td>IntegerType</td><td>The time that the object should be revealed</td></tr>
+<tr><td>InitialLocation</td><td>LocationType</td><td>The location that the object starts at</td></tr>
+<tr><td>InitialState</td><td>StringType</td><td>The state the object should start int</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="EngramValue"><b>EngramValue</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ScenCon to update an engram value.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>EngramName</td><td>StringType</td><td>
+					The name of the engram.
+				</td></tr>
+<tr><td>SpecificUnit</td><td>StringType</td><td>
+					If present, the one unit to which this engram value change refers
+				</td></tr>
+<tr><td>EngramValue</td><td>StringType</td><td>
+					A string representation of the engram value.
+				</td></tr>
+<tr><td>EngramDataType</td><td>StringType</td><td>
+					The name of the data type of the engram value.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ExternalApp_Log"><b>ExternalApp_Log</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Used by an external application or agent to inject data into the DDD data log.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>AppName</td><td>StringType</td><td>
+					The name of the external app.  This should always be used so
+					that two external apps don't interfere with each other.
+				</td></tr>
+<tr><td>LogEntry</td><td>StringType</td><td>
+					The content of the log entry in whatever format the app wants to put it in.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ExternalApp_Message"><b>ExternalApp_Message</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Used by an external application or agent to communicate with another external
+					application.  Has no effect on the DDD simulation.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>AppName</td><td>StringType</td><td>
+					The name of the external app.  This should always be used so
+					that two external apps don't interfere with each other.
+				</td></tr>
+<tr><td>Message</td><td>AttributeCollectionType</td><td>
+					Whatever data the apps want to exchange.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ExternalApp_SimStart"><b>ExternalApp_SimStart</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to alert external applications and agents that the simulation has started.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ExternalApp_SimStop"><b>ExternalApp_SimStop</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to alert external applications and agents that the simulation has stopped.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ExternalEmailReceived"><b>ExternalEmailReceived</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the DDDEmailBridge when an email is sent to the DDD.
+					This exists for the purpose of logging.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>FromAddress</td><td>StringType</td><td>
+					The email address of the sender.
+				</td></tr>
+<tr><td>ToAddresses</td><td>StringListType</td><td>
+					The list of email addresses the message was sent to.
+				</td></tr>
+<tr><td>WallClockTime</td><td>StringType</td><td>
+					A DateTime string of when the email server received the email.
+				</td></tr>
+<tr><td>Subject</td><td>StringType</td><td>
+					The subject of the email.
+				</td></tr>
+<tr><td>Body</td><td>StringType</td><td>
+					The body of the email.
+				</td></tr>
+<tr><td>Attachments</td><td>StringListType</td><td>
+					A list of paths to the attachment files.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="FailedToCreateChatRoom"><b>FailedToCreateChatRoom</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					OBSOLETE: Sent by TextChatServer to report result of RequestChatRoomCreate event.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Message</td><td>StringType</td><td>
+					The reason the room couldn't be created.
+				</td></tr>
+<tr><td>SenderDM_ID</td><td>StringType</td><td>
+					The id of the decision maker that created the chat room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ForceUpdateObjectAttribute"><b>ForceUpdateObjectAttribute</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td></td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>ID of the object being updated</td></tr>
+<tr><td>AttributeName</td><td>StringType</td><td>Name of the attribute being updated</td></tr>
+<tr><td>AttributeValue</td><td>WrapperType</td><td>This is a generic data type, which the simulators should know how to cast.</td></tr>
+<tr><td>UpdateType</td><td>StringType</td><td>This is for bookkeeping, either SIMULATOR or AGENT to determine who sent the event.</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ForkReplayFinished"><b>ForkReplayFinished</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to announce that the replay section of a fork-replay is finished and we are now in regular play mode.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ForkReplayStarted"><b>ForkReplayStarted</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to announce that we are currently replaying, and all user events should be blocked in the UI.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="GameSpeed"><b>GameSpeed</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to announce that the simulation's speed factor has been changed.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>SpeedFactor</td><td>DoubleType</td><td>
+					If speed factor == 5, 1 sim second = 1/5 real seconds.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="GameSpeedRequest"><b>GameSpeedRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to request that the simulation's speed factor should be changed.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>SpeedFactor</td><td>DoubleType</td><td>
+					If speed factor == 5, 1 sim second = 1/5 real seconds.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="HandshakeAvailablePlayers"><b>HandshakeAvailablePlayers</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Part of the client GUI initialization handshake.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>TargetTerminalID</td><td>StringType</td><td>
+					The id of the machine that this message is being sent to.
+				</td></tr>
+<tr><td>AvailablePlayers</td><td>StringListType</td><td>
+					A list of decision maker ids that haven't been selected by a player yet.
+				</td></tr>
+<tr><td>TakenPlayers</td><td>StringListType</td><td>
+					outdated parameter.
+				</td></tr>
+<tr><td>Players</td><td>StringListType</td><td>
+					A list of all the players in the scenario.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="HandshakeGUIRegister"><b>HandshakeGUIRegister</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Part of the client GUI initialization handshake.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>TerminalID</td><td>StringType</td><td>
+					The id of the machine that is logging in.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="HandshakeGUIRoleRequest"><b>HandshakeGUIRoleRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Part of the client GUI initialization handshake.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>PlayerID</td><td>StringType</td><td>
+					A decision maker id.
+				</td></tr>
+<tr><td>TerminalID</td><td>StringType</td><td>
+					A machine id.
+				</td></tr>
+<tr><td>LoginType</td><td>StringType</td><td>
+					Can be FULL or OBSERVER.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="HandshakeInitializeGUI"><b>HandshakeInitializeGUI</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Part of the client GUI initialization handshake.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>PlayerID</td><td>StringType</td><td>
+					A decision maker id.
+				</td></tr>
+<tr><td>TerminalID</td><td>StringType</td><td>
+					A machine id.
+				</td></tr>
+<tr><td>ScenarioInfo</td><td>StringType</td><td>
+					PLACEHOLDER
+				</td></tr>
+<tr><td>ScenarioName</td><td>StringType</td><td>
+					The Scenario's name.
+				</td></tr>
+<tr><td>ScenarioDescription</td><td>StringType</td><td>
+					The Scenario's description.
+				</td></tr>
+<tr><td>MapName</td><td>StringType</td><td>
+					The Map's file name. Right now, this should be Map.jpg
+				</td></tr>
+<tr><td>UTMNorthing</td><td>DoubleType</td><td>
+					The map's northing value.
+				</td></tr>
+<tr><td>UTMEasting</td><td>DoubleType</td><td>
+					The map's easting value.
+				</td></tr>
+<tr><td>HorizontalPixelsPerMeter</td><td>DoubleType</td><td>
+					The map's Horizontal Pixels Per Meter value.
+				</td></tr>
+<tr><td>VerticalPixelsPerMeter</td><td>DoubleType</td><td>
+					The map's Vertical Pixels Per Meter value.
+				</td></tr>
+<tr><td>PlayerBrief</td><td>StringType</td><td>
+					Briefing for the specified player.
+				</td></tr>
+<tr><td>IconLibrary</td><td>StringType</td><td>
+					The image library dll for this scenario.
+				</td></tr>
+<tr><td>VoiceChatEnabled</td><td>BooleanType</td><td>
+					If this value is false, then the voice chat menu option will be disabled.
+				</td></tr>
+<tr><td>VoiceChatServerName</td><td>StringType</td><td>
+					The server name of the conaito voice server.
+				</td></tr>
+<tr><td>VoiceChatServerPort</td><td>IntegerType</td><td>
+					The port number of the conaito voice server.
+				</td></tr>
+<tr><td>VoiceChatUserPassword</td><td>StringType</td><td>
+					The password for clients to log into the conaito voice server.
+				</td></tr>
+<tr><td>IsObserver</td><td>BooleanType</td><td>
+					Is this player allowed to interact with objects on the screen.
+				</td></tr>
+<tr><td>IsForkReplay</td><td>BooleanType</td><td>
+					Are we in fork replay state at the time of login.
+				</td></tr>
+<tr><td>DefaultDisplayLabels</td><td>StringType</td><td>
+					Does the Client display asset labels by default.  true, false, disabled.
+				</td></tr>
+<tr><td>DefaultDisplayTags</td><td>StringType</td><td>
+					Does the Client display asset Tags by default. true, false, top, bottom, overlay, disabled.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="HandshakeInitializeGUIDone"><b>HandshakeInitializeGUIDone</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Part of the client GUI initialization handshake.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>PlayerID</td><td>StringType</td><td>
+					A decision maker id.
+				</td></tr>
+<tr><td>LoginType</td><td>StringType</td><td>
+					Can be FULL or OBSERVER.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="History_AttackedObjectReport"><b>History_AttackedObjectReport</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					A data logging event.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object being attacked.
+				</td></tr>
+<tr><td>ObjectLocation</td><td>LocationType</td><td>
+					The location of the object being attacked.
+				</td></tr>
+<tr><td>AttackSuccess</td><td>BooleanType</td><td>
+					Was the attack successful?
+				</td></tr>
+<tr><td>NewState</td><td>StringType</td><td>
+					The name of the state the object was transitioned to.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="History_AttackerObjectReport"><b>History_AttackerObjectReport</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					A data logging event.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the attacking object.
+				</td></tr>
+<tr><td>ObjectLocation</td><td>LocationType</td><td>
+					The location of the attacking object.
+				</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>
+					The unique id of the object being attacked.
+				</td></tr>
+<tr><td>TargetObjectLocation</td><td>LocationType</td><td>
+					The location of the target object.
+				</td></tr>
+<tr><td>CapabilityName</td><td>StringType</td><td>
+					The capability being applied to the target.
+				</td></tr>
+<tr><td>AppliedIntensity</td><td>IntegerType</td><td>
+					The capability intensity being applied to the target.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="History_Pursue"><b>History_Pursue</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					A data logging event.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object that will appear in the simulation.
+				</td></tr>
+<tr><td>ObjectLocation</td><td>LocationType</td><td>
+					The location of the pursuing object
+				</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>
+					The unigue id of the target object
+				</td></tr>
+<tr><td>TargetObjectLocation</td><td>LocationType</td><td>
+					The location of the target object.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="History_SubplatformLaunch"><b>History_SubplatformLaunch</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					A data logging event.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object that will appear in the simulation.
+				</td></tr>
+<tr><td>ParentObjectID</td><td>StringType</td><td>
+					The unigue id of the parent object
+				</td></tr>
+<tr><td>ParentObjectLocation</td><td>LocationType</td><td>
+					The location of the parent. (The child is launched to this location also.)
+				</td></tr>
+<tr><td>LaunchDestinationLocation</td><td>LocationType</td><td>
+					The destination location of the launched object.
+				</td></tr>
+<tr><td>IsWeaponLaunch</td><td>BooleanType</td><td>
+					Was this a launch a weapon launch or a normal subplatform launch.
+				</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>
+					If this was a weapon launch, this is the target that the weapon was launched at.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="InitializeClassifications"><b>InitializeClassifications</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td></td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Classifications</td><td>StringListType</td><td>The set of possible classifications within the scenario</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="JoinChatRoom"><b>JoinChatRoom</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					OBSOLETE:  Sent by the GUI client to the controller to request that a decision maker
+					be added to a chat room.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>RoomName</td><td>StringType</td><td>
+					The name of the chat room.
+				</td></tr>
+<tr><td>TargetPlayerID</td><td>StringType</td><td>
+					The decision maker that that is trying to join the chat room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="JoinVoiceChannel"><b>JoinVoiceChannel</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Event sent from VoiceServer when a client requests to begin listening/speaking on a specific voice channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>Name of the channel the DM is now participating in</td></tr>
+<tr><td>DecisionMakerID</td><td>StringType</td><td>ID of the DM that is now participating in the channel</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="LeaveVoiceChannel"><b>LeaveVoiceChannel</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Event sent from VoiceServer when a client requests to stop listening/speaking on a specific voice channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>Name of the channel the DM has stopped participating in</td></tr>
+<tr><td>DecisionMakerID</td><td>StringType</td><td>ID of the DM that is no longer participating in the channel</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="LoadScenarioRequest"><b>LoadScenarioRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to request that a scenario be loaded.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ScenarioPath</td><td>StringType</td><td>
+					The path to the scenario file on the server machine.
+				</td></tr>
+<tr><td>GroupName</td><td>StringType</td><td>
+					The group name used for tagging output files.
+				</td></tr>
+<tr><td>OutputLogDir</td><td>StringType</td><td>
+					That directory that the output log will be saved to.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="MoveDone"><b>MoveDone</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by SimCore to tell the ScenCon that an object has reached its destination.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object.
+				</td></tr>
+<tr><td>Reason</td><td>StringType</td><td>
+					Why the move is done.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="MoveObject"><b>MoveObject</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ScenCon to SimCore to announce that an object has 
+					changed its course and has a new destination.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object.
+				</td></tr>
+<tr><td>DestinationLocation</td><td>LocationType</td><td>
+					The current X,Y,Z location in meters.
+					X = UTM Easting
+					Y = UTM Northing
+					Z = altitude in meters
+				</td></tr>
+<tr><td>Throttle</td><td>DoubleType</td><td>
+					A floating point number between 0 and 1.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="MoveObjectRequest"><b>MoveObjectRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+                    Sent by a client GUI or agent to the ScenCon to request that an object be moved.
+                </td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker requesting the action.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object.
+				</td></tr>
+<tr><td>DestinationLocation</td><td>LocationType</td><td>
+					The destination X,Y,Z location in meters.
+					X = UTM Easting
+					Y = UTM Northing
+					Z = altitude in meters
+				</td></tr>
+<tr><td>Throttle</td><td>DoubleType</td><td>
+					a floating point number between 0 and 1.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="MuteUser"><b>MuteUser</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the voice server to the client GUI to mute a user on a particular channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>Speaker</td><td>StringType</td><td></td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="NewObject"><b>NewObject</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ScenCon to announce an object that will be in the simulation.  
+					The object is not on the screen yet.  It must be revealed before it can interact
+					with other objects.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ID</td><td>StringType</td><td>
+					The unique ID of the object being created.
+				</td></tr>
+<tr><td>ObjectType</td><td>StringType</td><td>
+					A string specifying the object type of the new object.
+					This object type must be one of the types described in the Object Model.
+				</td></tr>
+<tr><td>StateTable</td><td>StateTableType</td><td>
+					The table of states for the new object.
+				</td></tr>
+<tr><td>Attributes</td><td>AttributeCollectionType</td><td>
+					The initial values of all the attributes (specified in the object model)
+					of the new object.  The StateTable and ID attributes are excluded.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ObjectClassificationRequest"><b>ObjectClassificationRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI or agent to the ViewPro to request that an object gains a new classification.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker requesting the action.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the target object.
+				</td></tr>
+<tr><td>ClassificationName</td><td>StringType</td><td>
+					The name of the capability used in the attack.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ObjectCollision"><b>ObjectCollision</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by SimCore when two objects with non-zero size collide with each other.
+					Deprecated.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID1</td><td>StringType</td><td>
+					The unique id of the first colliding object.
+				</td></tr>
+<tr><td>ObjectID2</td><td>StringType</td><td>
+					The unique id of the second colliding object.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="PauseScenario"><b>PauseScenario</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to announce that the simlation has been paused.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="PauseScenarioRequest"><b>PauseScenarioRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to the server from the agent API to request a scenario pause.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="PlayerControl"><b>PlayerControl</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to announce whether a decision maker is being played by a human or by the computer.
+					If the decision maker is played by the computer, self-defense will be activated for objects
+					under that decision maker's control.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>DecisionMakerID</td><td>StringType</td><td>
+					The id of the decision maker.
+				</td></tr>
+<tr><td>ControlledBy</td><td>StringType</td><td>
+					Either HUMAN or COMPUTER.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="Playfield"><b>Playfield</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the ScenCon to client GUIs or agents to initialize map information.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>MapDataFile</td><td>StringType</td><td>
+					The file name for the map meta data file.
+					This file contains:
+					the image filename
+					The icon library (optional)
+					the meters per pixel
+					the UTM Zone of the bottom left corner of the map
+					the UTM Northing of the bottom left corner of the map
+					the UTM Easting of the bottom left corner of the map
+				</td></tr>
+<tr><td>IconLibrary</td><td>StringType</td><td>
+					The name of the icon library to be used when finding icons for this scenario.
+				</td></tr>
+<tr><td>UTMZone</td><td>StringType</td><td>
+					the UTM Zone of the bottom left corner of the map
+				</td></tr>
+<tr><td>UTMNorthing</td><td>DoubleType</td><td>
+					the UTM Northing of the bottom left corner of the map
+				</td></tr>
+<tr><td>UTMEasting</td><td>DoubleType</td><td>
+					the UTM Easting of the bottom left corner of the map
+				</td></tr>
+<tr><td>HorizontalScale</td><td>DoubleType</td><td>
+					The map's horizontal meters per pixel ratio
+				</td></tr>
+<tr><td>VerticalScale</td><td>DoubleType</td><td>
+					The map's vertical meters per pixel ratio
+				</td></tr>
+<tr><td>Name</td><td>StringType</td><td>
+					Name of the scenario.
+				</td></tr>
+<tr><td>Description</td><td>StringType</td><td>
+					Description of the Scenario.
+				</td></tr>
+<tr><td>DefaultDisplayLabels</td><td>StringType</td><td>
+					Does the Client display asset labels by default.  true, false, disabled.
+				</td></tr>
+<tr><td>DefaultDisplayTags</td><td>StringType</td><td>
+					Does the Client display asset Tags by default. true, false, top, bottom, overlay, disabled.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="PlayVoiceMessage"><b>PlayVoiceMessage</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Insert a voice message from a file</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Channel</td><td>StringType</td><td>Channel that will play the message</td></tr>
+<tr><td>File</td><td>StringType</td><td>Location of the file containing the message</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="PlayVoiceMessageToUser"><b>PlayVoiceMessageToUser</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Insert a voice message from a file</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>DecisionMakerID</td><td>StringType</td><td>User that will hear the message</td></tr>
+<tr><td>File</td><td>StringType</td><td>Location of the file containing the message</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RandomSeed"><b>RandomSeed</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ScenCon to SimCore to initialize random number generator.
+					The same random seed is used in a replay as in the original run so that attack results
+					come out the same.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>SeedValue</td><td>IntegerType</td><td>
+					The random seed that the SimCore will use for initializing its random
+					number generator.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RemoveFromVoiceChannel"><b>RemoveFromVoiceChannel</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the  controller to the voice server request that a decision maker
+					be added to a channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>DeletedPlayer</td><td>StringType</td><td>
+					The decision maker that that is being removed from the chat room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RequestChatRoomCreate"><b>RequestChatRoomCreate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by client GUI to Controller to request that a chat room be created.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>RoomName</td><td>StringType</td><td>
+					The name of the chat room.
+				</td></tr>
+<tr><td>MembershipList</td><td>StringListType</td><td>
+					The decision makers that are members of the room.
+				</td></tr>
+<tr><td>SenderDM_ID</td><td>StringType</td><td>
+					The id of the decision maker that created the chat room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RequestCloseChatRoom"><b>RequestCloseChatRoom</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by Client GUI to Controller to request that a Chat Room be closed
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>RoomName</td><td>StringType</td><td>
+					The name of the chat room.
+				</td></tr>
+<tr><td>SenderDM_ID</td><td>StringType</td><td>
+					The id of the decision maker that wants to close the chat room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RequestJoinVoiceChannel"><b>RequestJoinVoiceChannel</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Event sent from VoiceClient to VoiceServer when a client requests to begin listening/speaking on a specific voice channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>Name of the channel the DM wants to participate in</td></tr>
+<tr><td>DecisionMakerID</td><td>StringType</td><td>ID of the DM that is now participating in the channel</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RequestLeaveVoiceChannel"><b>RequestLeaveVoiceChannel</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Event sent from VoiceClient to VoiceServer when a client requests to stop listening/speaking on a specific voice channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>Name of the channel the DM has stopped participating in</td></tr>
+<tr><td>DecisionMakerID</td><td>StringType</td><td>ID of the DM that is no longer participating in the channel</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RequestMuteUser"><b>RequestMuteUser</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the client GUI to mute a user on a particular voice channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>Speaker</td><td>StringType</td><td></td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RequestStartedTalking"><b>RequestStartedTalking</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the client GUI to the voice server to indicate that a particular DM wishes to speak on the channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>Speaker</td><td>StringType</td><td></td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RequestStoppedTalking"><b>RequestStoppedTalking</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the client GUI to the voice server to indicate that a particular DM wishes to stop speaking on the channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>Speaker</td><td>StringType</td><td></td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RequestUnmuteUser"><b>RequestUnmuteUser</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the client GUI to unmute a user on a particular voice channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>Speaker</td><td>StringType</td><td></td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RequestWhiteboardRoomCreate"><b>RequestWhiteboardRoomCreate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by client GUI to Controller to request that a whiteboard room be created.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>RoomName</td><td>StringType</td><td>
+					The name of the whiteboard room.
+				</td></tr>
+<tr><td>MembershipList</td><td>StringListType</td><td>
+					The decision makers that are members of the room.
+				</td></tr>
+<tr><td>SenderDM_ID</td><td>StringType</td><td>
+					The id of the decision maker that created the whiteboard room.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ResetSimulation"><b>ResetSimulation</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Deprecated
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ResumeScenario"><b>ResumeScenario</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to announce that the simulation is being restarted after a pause.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ResumeScenarioRequest"><b>ResumeScenarioRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to the server from the agent API to request a scenario resume.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="RevealObject"><b>RevealObject</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ScenCon to announce that the object is fully in the simulation world
+					and can start interacting with other objects.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object that will appear in the simulation.
+				</td></tr>
+<tr><td>Attributes</td><td>AttributeCollectionType</td><td>
+					The initial values of all the attributes (specified in the object model)
+					of the revealed object.  The StateTable and ID attributes are excluded.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ScoreUpdate"><b>ScoreUpdate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by SimCore to report a score change.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>DecisionMakerID</td><td>StringType</td><td>
+					The id of the decision maker.
+				</td></tr>
+<tr><td>ScoreName</td><td>StringType</td><td>
+					The name of the score.
+				</td></tr>
+<tr><td>ScoreValue</td><td>DoubleType</td><td>
+					The current value of the score.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="SEAMATE_TrackAdded"><b>SEAMATE_TrackAdded</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>A DM Using the decision aid has added an object to their Track list</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The object ID of the user's newly selected object.  If this is an empty string, then they have no object selected.
+				</td></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The DM ID of the user who is selecting an object.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="SelfDefenseAttackStarted"><b>SelfDefenseAttackStarted</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the SimCore to announce that a self-defense attack has started.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>AttackerObjectID</td><td>StringType</td><td>
+					The Unique ID of the object acting in self-defense.
+				</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>
+					The Unique Id of the object being attacked via self-defense.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="SendTrackRemovedEvent"><b>SendTrackRemovedEvent</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>A DM Using the decision aid has removed an object from their Track list</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The object ID of the user's selected object.  If this is an empty string, then they have no object selected.
+				</td></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The DM ID of the user who is removing an object.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ServerState"><b>ServerState</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the server to report its current state.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>MessageType</td><td>StringType</td><td>
+					The the new state of the server
+				</td></tr>
+<tr><td>MessageText</td><td>StringType</td><td>
+					Any error messages or extra info
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="SimCoreReady"><b>SimCoreReady</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					This event is sent from the SimCore to the ScenCon to let it know that the SimCore is 
+					done initializing.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="SimulationTimeEvent"><b>SimulationTimeEvent</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td></td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>SimulationTime</td><td>StringType</td><td>
+					The string representation of the current simulation time in HH:mm:ss format.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="StartedTalking"><b>StartedTalking</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the voice server to the client GUI to indicate that a particular DM wishes to speak on the channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>Speaker</td><td>StringType</td><td></td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="StartupComplete"><b>StartupComplete</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the ScenCon to announce that it is done sending out simulation initialization events.
+					All the NewObject events should have already gone out now.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="StateChange"><b>StateChange</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the SimCore to announce that an object has gone through a state-change.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object.
+				</td></tr>
+<tr><td>NewState</td><td>StringType</td><td>
+					The name of the new state for the object.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="StoppedTalking"><b>StoppedTalking</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the voice server to the client GUI to indicate that a particular DM wishes has stopped talking
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>Speaker</td><td>StringType</td><td></td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="StopReplay"><b>StopReplay</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to announce that a replay has been stopped.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="StopScenario"><b>StopScenario</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to announce that a simulation has been stopped.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="StopScenarioRequest"><b>StopScenarioRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to request that the scenario be stopped.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="SubplatformDock"><b>SubplatformDock</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent from ScenCon to SimCore to announce that a subplatform has rejoined its parent
+					object.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the docking object.
+				</td></tr>
+<tr><td>ParentObjectID</td><td>StringType</td><td>
+					The unique id of the object that is being docked to.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="SubplatformDockRequest"><b>SubplatformDockRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI or agent to the ScenCon to request that an object be docked to its parent object.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker requesting the action.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the docking object.
+				</td></tr>
+<tr><td>ParentObjectID</td><td>StringType</td><td>
+					The id of the object that the docking object is being docked to.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="SubplatformLaunch"><b>SubplatformLaunch</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					The ScenCon sends this event to initiate the SimCore object launch process.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object that will appear in the simulation.
+				</td></tr>
+<tr><td>ParentObjectID</td><td>StringType</td><td>
+					The unique id of the parent of the object being launched.
+				</td></tr>
+<tr><td>LaunchDestinationLocation</td><td>LocationType</td><td>
+					The location to which the object will be launched.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="SubplatformLaunchRequest"><b>SubplatformLaunchRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI or agent to the ScenCon to request that a docked object be launched from its
+					parent object.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker requesting the action.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object being launched.
+				</td></tr>
+<tr><td>ParentObjectID</td><td>StringType</td><td>
+					The unique id of the object that is launching a child
+				</td></tr>
+<tr><td>LaunchDestinationLocation</td><td>LocationType</td><td>
+					The destination that the object should be launched to.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="SystemMessage"><b>SystemMessage</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the SimCore or Controller to report a message to a client GUI or agent.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>PlayerID</td><td>StringType</td><td>
+					The decision maker the message is being sent to.
+				</td></tr>
+<tr><td>Message</td><td>StringType</td><td>
+					The content of the message.
+				</td></tr>
+<tr><td>TextColor</td><td>IntegerType</td><td>
+					The color that the message should be displayed as.
+				</td></tr>
+<tr><td>DisplayStyle</td><td>StringType</td><td>
+					Use "DEFAULT" for whatever the client considers the default, "POP" to request a popup alert.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="TextChat"><b>TextChat</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the TextChatServer to a client GUI or agent.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChatBody</td><td>StringType</td><td>
+					The chat message to be sent.
+				</td></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the chat message. If a System message, == "SYSTEM".
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					ALL for a global message, a specific team name for a certain team, or an individual user's unique ID for only that user. Each client needs to know which to receive, and which to drop.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="TextChatRequest"><b>TextChatRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI or agent to the TextChatServer.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the chat message.
+				</td></tr>
+<tr><td>ChatBody</td><td>StringType</td><td>
+					The chat message to be sent.
+				</td></tr>
+<tr><td>ChatType</td><td>StringType</td><td>
+					outdated...
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the ChatRoom;          
+					(OBSOLETE) if ChatType == P2P, this is the unique ID of the decision maker receiving the message.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="TimeTick"><b>TimeTick</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					This event is sent by the ScenCon to the simulators to tell them to update to the next simulation time.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>SimulationTime</td><td>StringType</td><td>
+					The string representation of the current simulation time in HH:mm:ss format.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="TransferObject"><b>TransferObject</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to indicate that an asset has been transferred to a different DecisionMaker
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker receiving the asset.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the asset being transferred.
+				</td></tr>
+<tr><td>DonorUserID</td><td>StringType</td><td>
+					The unique id of the decision makerlosing the asset.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="TransferObjectRequest"><b>TransferObjectRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent to indicate that a client has requested that an asset transferred to a different DecisionMaker
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker making the request.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the asset being transferred.
+				</td></tr>
+<tr><td>RecipientID</td><td>StringType</td><td>
+					The unique id of the new owner.
+				</td></tr>
+<tr><td>State</td><td>StringType</td><td>
+					The current state of the object.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="UnmuteUser"><b>UnmuteUser</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the voice server to the client GUI to unmute a user on a particular channel
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ChannelName</td><td>StringType</td><td>
+					The name of the channel
+				</td></tr>
+<tr><td>Speaker</td><td>StringType</td><td></td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="UpdateAttackTimeWindow"><b>UpdateAttackTimeWindow</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td></td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>AttackingObjectID</td><td>StringType</td><td>ID of the attacking object</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>ID of the target object</td></tr>
+<tr><td>CapabilityName</td><td>StringType</td><td>Capability being applied</td></tr>
+<tr><td>NewAttackTimeWindow</td><td>IntegerType</td><td>This 'window' of time is how long the attack should last for (in milliseconds)</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="UpdateTag"><b>UpdateTag</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td></td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UnitID</td><td>StringType</td><td>
+					The unit whose tag is being changed			
+				</td></tr>
+<tr><td>Tag</td><td>StringType</td><td>
+					The new tag value			
+				</td></tr>
+<tr><td>TeamMembers</td><td>StringListType</td><td>
+					All the players who will see the new tag 
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ViewProActiveRegionUpdate"><b>ViewProActiveRegionUpdate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the ViewPro to a client GUI or agent to alert it that an active region
+					is present.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The ObjectID of the object being updated.
+				</td></tr>
+<tr><td>IsVisible</td><td>BooleanType</td><td>
+					Is the region visible on the client screen?
+				</td></tr>
+<tr><td>DisplayColor</td><td>IntegerType</td><td>
+					The color to show the region.
+				</td></tr>
+<tr><td>Shape</td><td>PolygonType</td><td>
+					The vertices of the region.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ViewProAttackUpdate"><b>ViewProAttackUpdate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ViewPro to alert a client GUI or agent that an attack has started.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>AttackerID</td><td>StringType</td><td>
+					Attacking object's ID
+				</td></tr>
+<tr><td>TargetID</td><td>StringType</td><td>
+					Target object's ID
+				</td></tr>
+<tr><td>AttackEndTime</td><td>IntegerType</td><td>
+					The time at which the attack will cease.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ViewProAttributeUpdate"><b>ViewProAttributeUpdate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+				    Sent by the ViewPro to the GUI client or agent to announce that an object's sensed
+                    attribute has changed.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>TargetPlayer</td><td>StringType</td><td>
+					The player who is intended to receive this event.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The ObjectID of the object being updated.
+				</td></tr>
+<tr><td>OwnerID</td><td>StringType</td><td>
+					The OwnerID of the object being updated.
+				</td></tr>
+<tr><td>Attributes</td><td>AttributeCollectionType</td><td>
+					The attributes known about the object.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ViewProInitializeObject"><b>ViewProInitializeObject</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the ViewPro to a client GUI or agent to initialize an object.
+					This will be sent for all objects even if they haven't been sensed.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>TargetPlayer</td><td>StringType</td><td>
+					The decision maker that this event is being sent to.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object.
+				</td></tr>
+<tr><td>Location</td><td>LocationType</td><td>
+					The initial location of the object.
+				</td></tr>
+<tr><td>IconName</td><td>StringType</td><td>
+					The icon to use when displaying the object.
+				</td></tr>
+<tr><td>OwnerID</td><td>StringType</td><td>
+					The decision maker that owns the object.
+				</td></tr>
+<tr><td>IsWeapon</td><td>BooleanType</td><td>
+					Is this object a weapon?
+				</td></tr>
+<tr><td>LabelColor</td><td>IntegerType</td><td>
+					The color that the icon's label should be shown in.
+				</td></tr>
+<tr><td>CurrentClassification</td><td>StringType</td><td>
+					The initial classification for the object.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ViewProMotionUpdate"><b>ViewProMotionUpdate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ViewPro to a client GUI or agent to update the motion of an object.
+					This will be sent once for each object and isn't based on sensors.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>TargetPlayer</td><td>StringType</td><td>
+					With ViewProInitializeObject, this event might just become a broadcast event.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The ObjectID of the object being updated.
+				</td></tr>
+<tr><td>OwnerID</td><td>StringType</td><td>
+					The OwnerID of the object being updated.
+				</td></tr>
+<tr><td>Location</td><td>LocationType</td><td>
+					The current location of the object.
+				</td></tr>
+<tr><td>DestinationLocation</td><td>LocationType</td><td>
+					The destination location of the object.
+				</td></tr>
+<tr><td>MaximumSpeed</td><td>DoubleType</td><td>
+					The maximum speed of the object.
+				</td></tr>
+<tr><td>Throttle</td><td>DoubleType</td><td>
+					The fraction of maximum speed that the object should move at.
+					Between 0 and 1.
+				</td></tr>
+<tr><td>IconName</td><td>StringType</td><td>
+					To ensure that the client GUI has an icon to display for an object.
+				</td></tr>
+<tr><td>IsWeapon</td><td>BooleanType</td><td>
+					If this is true, then this is a weapon, and should be displayed with a bounding box.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="ViewProStopObjectUpdate"><b>ViewProStopObjectUpdate</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ViewPro to alert a client GUI or agent that an object has stopped its motion.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The id of the object being stopped.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WeaponLaunch"><b>WeaponLaunch</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by ScenCon to SimCore to accounce the firing of a weapon.  
+					A specialized version of SubplatformLaunch.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the object that will appear in the simulation.
+				</td></tr>
+<tr><td>ParentObjectID</td><td>StringType</td><td>
+					The unique id of the parent object.
+				</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>
+					The unique id of the object the weapon was launched at.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WeaponLaunchFailure"><b>WeaponLaunchFailure</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>This event is sent out from the Server when a Weapon Launch or Weapon Launch Request fails.  It's main purpose is to alert the View Pro to re-allocate the weapon which was not launched.  This failure can be due to permissions, lack of munitions, or if the target is no longer in the simulation.</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>The launching platform ID.</td></tr>
+<tr><td>WeaponObjectID</td><td>StringType</td><td>The ID of the weapon that was to-be launched.</td></tr>
+<tr><td>Reason</td><td>StringType</td><td>A text description for either the Client's benefit, or for the Server's benefit, why did this request fail.</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WeaponLaunchRequest"><b>WeaponLaunchRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI or agent to the ScenCon to request that a weapon be fired from its parent
+					object at a target.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker requesting the action.
+				</td></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					The unique id of the attacking object.  This is the weapon being launched.
+				</td></tr>
+<tr><td>ParentObjectID</td><td>StringType</td><td>
+					The unique id of the attacking object.  This is the object which is launching the weapon.
+				</td></tr>
+<tr><td>TargetObjectID</td><td>StringType</td><td>
+					The unique id of the object being attacked.
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WhiteboardClear"><b>WhiteboardClear</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the WhiteboardServer to a client GUI or agent.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the chat message.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WhiteboardClearAll"><b>WhiteboardClearAll</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the WhiteboardServer to a client GUI or agent.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the chat message.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WhiteboardClearAllRequest"><b>WhiteboardClearAllRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI or agent to the WhiteboardChatServer.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the whiteboard message.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WhiteboardClearRequest"><b>WhiteboardClearRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI or agent to the WhiteboardChatServer.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the whiteboard message.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WhiteboardLine"><b>WhiteboardLine</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the WhiteboardServer to a client GUI or agent.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					An ID unique to this whiteboard room for this whiteboard object.
+				</td></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the whiteboard message.
+				</td></tr>
+<tr><td>Mode</td><td>IntegerType</td><td>
+					The type of line to be drawn.
+				</td></tr>
+<tr><td>StartLocation</td><td>LocationType</td><td>
+					The starting location of the line.
+				</td></tr>
+<tr><td>EndLocation</td><td>LocationType</td><td>
+					The end location of the line.
+				</td></tr>
+<tr><td>Width</td><td>DoubleType</td><td>
+					The width of the line.
+				</td></tr>
+<tr><td>OriginalScale</td><td>DoubleType</td><td>
+					The scale the map was set at when this shape was drawn.
+				</td></tr>
+<tr><td>Color</td><td>IntegerType</td><td>
+					The color of the line.
+				</td></tr>
+<tr><td>Text</td><td>StringType</td><td>
+					Text to include on line.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WhiteboardLineRequest"><b>WhiteboardLineRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI or agent to the WhiteboardChatServer.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the whiteboard message.
+				</td></tr>
+<tr><td>Mode</td><td>IntegerType</td><td>
+					The type of line to be drawn.
+				</td></tr>
+<tr><td>StartLocation</td><td>LocationType</td><td>
+					The starting location of the line.
+				</td></tr>
+<tr><td>EndLocation</td><td>LocationType</td><td>
+					The end location of the line.
+				</td></tr>
+<tr><td>Width</td><td>DoubleType</td><td>
+					The width of the line.
+				</td></tr>
+<tr><td>OriginalScale</td><td>DoubleType</td><td>
+					The scale the map was set at when this shape was drawn.
+				</td></tr>
+<tr><td>Color</td><td>IntegerType</td><td>
+					The color of the line.
+				</td></tr>
+<tr><td>Text</td><td>StringType</td><td>
+					Text to include on line.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WhiteboardSyncScreenView"><b>WhiteboardSyncScreenView</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Sent by the WhiteboardServer to a client GUI or agent.</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the whiteboard message.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the user to sync your view with;
+				</td></tr>
+<tr><td>WhiteboardID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WhiteboardSyncScreenViewRequest"><b>WhiteboardSyncScreenViewRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Sent by a client GUI or agent to the WhiteboardChatServer.</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the whiteboard message.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the user to sync your view with;
+				</td></tr>
+<tr><td>WhiteboardID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WhiteboardUndo"><b>WhiteboardUndo</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by the WhiteboardServer to a client GUI or agent.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					An ID unique to this whiteboard room for this whiteboard object.
+				</td></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the chat message.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+<table border="1">
+<tr>
+<td><b>Event Name</b></td>
+<td><a name="WhiteboardUndoRequest"><b>WhiteboardUndoRequest</b></a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>
+					Sent by a client GUI or agent to the WhiteboardChatServer.
+				</td>
+</tr>
+<tr>
+<td>Written to DDD Log File</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Read for Replay</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>
+<table border="1">
+<tr><th>Name</th><th>Data Type</th><th>Description</th></tr>
+<tr><td>ObjectID</td><td>StringType</td><td>
+					An ID unique to this whiteboard room for this whiteboard object.
+				</td></tr>
+<tr><td>UserID</td><td>StringType</td><td>
+					The unique id of the decision maker sending the whiteboard message.
+				</td></tr>
+<tr><td>TargetUserID</td><td>StringType</td><td>
+					The name of the WhiteboardRoom;
+				</td></tr>
+<tr><td>Time</td><td>IntegerType</td><td>
+				Time is an integer specifying the number of milliseconds since
+				the start of the simulation.
+			</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<a href="#TOC">Back to Table of Contents</a>
+<p></p>
+</body></html>

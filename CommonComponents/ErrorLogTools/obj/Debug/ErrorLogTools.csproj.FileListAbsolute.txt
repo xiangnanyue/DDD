@@ -5,3 +5,10 @@ C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ErrorLogTools
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ErrorLogTools\obj\Debug\ErrorLogTools.csprojResolveAssemblyReference.cache
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ErrorLogTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.ErrorLogTools.dll
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ErrorLogTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.ErrorLogTools.pdb
+D:\DDD\CommonComponents\ErrorLogTools\bin\Debug\Aptima.Asim.DDD.CommonComponents.ErrorLogTools.dll
+D:\DDD\CommonComponents\ErrorLogTools\bin\Debug\Aptima.Asim.DDD.CommonComponents.ErrorLogTools.pdb
+D:\DDD\CommonComponents\ErrorLogTools\bin\Debug\Aptima.Asim.DDD.CommonComponents.ServerOptionsTools.dll
+D:\DDD\CommonComponents\ErrorLogTools\bin\Debug\Aptima.Asim.DDD.CommonComponents.ServerOptionsTools.pdb
+D:\DDD\CommonComponents\ErrorLogTools\obj\Debug\ErrorLogTools.csprojResolveAssemblyReference.cache
+D:\DDD\CommonComponents\ErrorLogTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.ErrorLogTools.dll
+D:\DDD\CommonComponents\ErrorLogTools\obj\Debug\Aptima.Asim.DDD.CommonComponents.ErrorLogTools.pdb

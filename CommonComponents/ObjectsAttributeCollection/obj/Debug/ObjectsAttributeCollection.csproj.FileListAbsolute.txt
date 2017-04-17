@@ -6,3 +6,11 @@ C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ObjectsAttrib
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ObjectsAttributeCollection\obj\Debug\ObjectsAttributeCollection.csprojResolveAssemblyReference.cache
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ObjectsAttributeCollection\obj\Debug\Aptima.Asim.DDD.CommonComponents.ObjectsAttributeCollection.dll
 C:\Users\zzuzack\Desktop\Projects\DDD_Phoenix\src\CommonComponents\ObjectsAttributeCollection\obj\Debug\Aptima.Asim.DDD.CommonComponents.ObjectsAttributeCollection.pdb
+D:\DDD\CommonComponents\ObjectsAttributeCollection\bin\Debug\Aptima.Asim.DDD.CommonComponents.ObjectsAttributeCollection.dll
+D:\DDD\CommonComponents\ObjectsAttributeCollection\bin\Debug\Aptima.Asim.DDD.CommonComponents.ObjectsAttributeCollection.pdb
+D:\DDD\CommonComponents\ObjectsAttributeCollection\bin\Debug\Aptima.Asim.DDD.CommonComponents.DataTypeTools.dll
+D:\DDD\CommonComponents\ObjectsAttributeCollection\bin\Debug\Aptima.Asim.DDD.CommonComponents.DataTypeTools.pdb
+D:\DDD\CommonComponents\ObjectsAttributeCollection\bin\Debug\Aptima.Asim.DDD.CommonComponents.DataTypeTools.xml
+D:\DDD\CommonComponents\ObjectsAttributeCollection\obj\Debug\ObjectsAttributeCollection.csprojResolveAssemblyReference.cache
+D:\DDD\CommonComponents\ObjectsAttributeCollection\obj\Debug\Aptima.Asim.DDD.CommonComponents.ObjectsAttributeCollection.dll
+D:\DDD\CommonComponents\ObjectsAttributeCollection\obj\Debug\Aptima.Asim.DDD.CommonComponents.ObjectsAttributeCollection.pdb
